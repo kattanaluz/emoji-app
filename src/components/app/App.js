@@ -1,6 +1,7 @@
 import Input from "../input";
 import { useEffect, useState } from "react";
-import "./App.css";
+import styles from "./styles/App.module.css";
+import EmojiDisplay from "../EmojiDisplay";
 
 function App() {
   const URL = `https://api.emojisworld.fr/v1/popular`;
@@ -16,21 +17,27 @@ function App() {
     getEmoji();
   }, []);
 
-  emojis.forEach((item) => {
-    console.log(item.emoji);
-  });
-
+  console.log(emojis);
   return (
-    <div className="App">
+    <div className={styles.App}>
       <h1>📗 Emojipedia 📗</h1>
       <Input type="text" />
-      {emojis ? (
-        emojis.map((item) => {
-          return <p>{item.emoji}</p>;
-        })
-      ) : (
-        <p>loading...</p>
-      )}
+
+      <div className={styles.emojiContainer}>
+        {emojis ? (
+          emojis.map((item) => {
+            return (
+              <EmojiDisplay
+                divClass={"emojiWrapper"}
+                emoji={item.emoji}
+                emojiName={item.name}
+              />
+            );
+          })
+        ) : (
+          <p>Loading...</p>
+        )}
+      </div>
     </div>
   );
 }
