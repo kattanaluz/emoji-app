@@ -1,7 +1,7 @@
-export default function Input({ type }) {
+export default function Input({ divClass, type, placeholder }) {
   return (
-    <div>
-      <input type={type}></input>
+    <div className={divClass}>
+      <input type={type} placeholder={placeholder}></input>
     </div>
   );
 }

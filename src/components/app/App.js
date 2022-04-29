@@ -20,17 +20,22 @@ function App() {
   console.log(emojis);
   return (
     <div className={styles.App}>
-      <h1>📗 Emojipedia 📗</h1>
-      <Input type="text" />
-
+      <h1>Emoji Finder 🔎</h1>
+      <Input
+        divClass={styles.inputWrapper}
+        type="text"
+        placeholder="Type to search a emoji"
+      />
       <div className={styles.emojiContainer}>
         {emojis ? (
           emojis.map((item) => {
             return (
               <EmojiDisplay
-                divClass={"emojiWrapper"}
+                divClass={styles.emojiWrapper}
+                emojiClass={styles.emoji}
                 emoji={item.emoji}
                 emojiName={item.name}
+                btnText="copy emoji"
               />
             );
           })

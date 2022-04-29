@@ -1,17 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: #f9fafd;
+  color: #3a3a3b;
+}
+
 .App h1 {
-  color: #d48b04;
-  font-family: Arial, Helvetica, sans-serif;
+  color: #bf75e0;
+  font-family: "Pacifico", cursive;
+  font-size: 2.2rem;
+  letter-spacing: 0.1em;
+  text-align: center;
+}
+
+.App .inputWrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
 
-.App input {
+.App .inputWrapper input {
   width: 50%;
-  height: 1.7rem;
+  height: 2.3rem;
+  border-radius: 30px;
+  border: solid 0.5px grey;
 }
 
 .App .emojiContainer {
@@ -22,14 +41,14 @@
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  gap: 4rem;
-  margin: 0 3rem 1rem 3rem;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  gap: 3rem;
+  margin: 1rem 3rem 1rem 3rem;
 }
 
 .App .emojiWrapper {
+  width: 9rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -37,15 +56,30 @@
   -webkit-box-direction: normal;
       -ms-flex-flow: column nowrap;
           flex-flow: column nowrap;
-  -ms-flex-line-pack: center;
-      align-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.App .emojiWrapper p {
+  text-align: center;
+  font-size: 1rem;
+}
+
+.App .emojiWrapper .emoji {
+  font-size: 1.7rem;
+  margin-bottom: 0;
 }
 
 .App button {
   font-size: 1rem;
-}
-
-.App p {
-  font-size: 1.2rem;
+  border-radius: 50px;
+  background-color: #e5e5fc;
+  padding: 0.4rem 0.8rem 0.4rem 0.8rem;
+  border: solid 0.2px #d1d1fa;
+  font-size: 0.9rem;
 }
 /*# sourceMappingURL=App.module.css.map */

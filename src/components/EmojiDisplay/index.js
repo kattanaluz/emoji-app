@@ -1,9 +1,9 @@
-function EmojiDisplay({ divClass, emoji, emojiName }) {
+function EmojiDisplay({ divClass, emojiClass, emoji, emojiName, btnText }) {
   return (
     <div className={divClass}>
-      <p>{emoji}</p>
+      <p className={emojiClass}>{emoji}</p>
       <p>{emojiName}</p>
-      <button>copy emoji</button>
+      <button>{btnText}</button>
     </div>
   );
 }
