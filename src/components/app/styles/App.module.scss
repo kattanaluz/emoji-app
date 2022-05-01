@@ -24,6 +24,17 @@ body {
       height: 2.3rem;
       border-radius: 30px;
       border: solid 0.5px grey;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-size: 1rem;
+      color: inherit;
+      padding-left: 1rem;
+    }
+    :focus {
+      outline: none;
+    }
+    ::placeholder {
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-size: 1rem;
     }
   }
 
@@ -31,8 +42,8 @@ body {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
-    gap: 3rem;
-    margin: 1rem 3rem 1rem 3rem;
+    gap: 5rem;
+    margin: 1rem 5rem 1rem 5rem;
   }
 
   .emojiWrapper {
@@ -48,7 +59,7 @@ body {
     }
 
     .emoji {
-      font-size: 1.7rem;
+      font-size: 1.9rem;
       margin-bottom: 0;
     }
   }
@@ -60,5 +71,8 @@ body {
     padding: 0.4rem 0.8rem 0.4rem 0.8rem;
     border: solid 0.2px rgb(209, 209, 250);
     font-size: 0.9rem;
+  }
+  button:hover {
+    background-color: rgb(219, 219, 250);
   }
 }

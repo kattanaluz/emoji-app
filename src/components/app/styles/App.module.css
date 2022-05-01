@@ -31,6 +31,34 @@ body {
   height: 2.3rem;
   border-radius: 30px;
   border: solid 0.5px grey;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1rem;
+  color: inherit;
+  padding-left: 1rem;
+}
+
+.App .inputWrapper :focus {
+  outline: none;
+}
+
+.App .inputWrapper ::-webkit-input-placeholder {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1rem;
+}
+
+.App .inputWrapper :-ms-input-placeholder {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1rem;
+}
+
+.App .inputWrapper ::-ms-input-placeholder {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1rem;
+}
+
+.App .inputWrapper ::placeholder {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1rem;
 }
 
 .App .emojiContainer {
@@ -43,8 +71,8 @@ body {
           flex-flow: row wrap;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  gap: 3rem;
-  margin: 1rem 3rem 1rem 3rem;
+  gap: 5rem;
+  margin: 1rem 5rem 1rem 5rem;
 }
 
 .App .emojiWrapper {
@@ -70,7 +98,7 @@ body {
 }
 
 .App .emojiWrapper .emoji {
-  font-size: 1.7rem;
+  font-size: 1.9rem;
   margin-bottom: 0;
 }
 
@@ -81,5 +109,9 @@ body {
   padding: 0.4rem 0.8rem 0.4rem 0.8rem;
   border: solid 0.2px #d1d1fa;
   font-size: 0.9rem;
+}
+
+.App button:hover {
+  background-color: #dbdbfa;
 }
 /*# sourceMappingURL=App.module.css.map */
