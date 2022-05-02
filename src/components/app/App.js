@@ -4,37 +4,46 @@ import styles from "./styles/App.module.css";
 import EmojiDisplay from "../EmojiDisplay";
 
 function App() {
+  //basic url string
   const URL = "https://api.emojisworld.fr/v1/";
-  const [search, setSearch] = useState("popular");
-  const [userInput, setUserInput] = useState();
+
+  const [query, setQuery] = useState();
   const [emojis, setEmojis] = useState([]);
 
+  // fnc to get user input
   function getInput(event) {
-    setUserInput(event.target.value);
     if (event.code === "Enter") {
-      setSearch(userInput);
-      console.log(URL);
+      setQuery(event.target.value);
+      console.log(query);
     }
   }
 
+  useEffect(() => {
+    async function getEmoji() {
+      try {
+        if (!query) {
+          const promise = await fetch(`${URL}popular`);
+          const data = await promise.json();
+          setEmojis(data.results);
+        } else {
+          const promise = await fetch(`${URL}search?q=${query}`);
+          const data = await promise.json();
+          setEmojis(data.results);
+          console.log(data);
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    }
+    getEmoji();
+  }, [query]);
+
+  // fnc that enables the user click and copy emoji
   function copyEmoji(emoji) {
     navigator.clipboard
-      .writeText(`${URL}${search}`)
-      .then(() => alert(`You copied ${emoji}`));
+      .writeText(emoji)
+      .then(() => alert(`You copied: ${emoji}`));
   }
-
-  useEffect(
-    () => {
-      async function getEmoji() {
-        const promise = await fetch(`${URL}${search}`);
-        const data = await promise.json();
-        setEmojis(data.results);
-      }
-      getEmoji();
-    },
-    [],
-    search
-  );
 
   return (
     <div className={styles.App}>
@@ -42,11 +51,11 @@ function App() {
       <Input
         divClass={styles.inputWrapper}
         type="text"
-        placeholder="Type to search a emoji"
+        placeholder="Type to search emoji"
         onKeyPress={getInput}
       />
       <div className={styles.emojiContainer}>
-        {emojis ? (
+        {emojis && emojis.length > 0 ? (
           emojis.map((item, index) => {
             return (
               <EmojiDisplay
