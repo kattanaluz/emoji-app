@@ -7,6 +7,7 @@ function App() {
   //basic url string
   const URL = "https://api.emojisworld.fr/v1/";
 
+  // state to store the emojis and the search string
   const [query, setQuery] = useState();
   const [emojis, setEmojis] = useState([]);
 

@@ -6,8 +6,6 @@ function EmojiDisplay({
   emojiName,
   btnText,
   onClick,
-  copiedClass,
-  copiedText,
 }) {
   return (
     <div className={divClass}>
