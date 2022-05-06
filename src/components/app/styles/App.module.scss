@@ -7,7 +7,7 @@ body {
 
 .App {
   h1 {
-    color: #bf75e0;
+    color: #bb60f7;
     font-family: "Pacifico", cursive;
     font-size: 2.2rem;
     letter-spacing: 0.1em;
@@ -28,6 +28,8 @@ body {
       font-size: 1rem;
       color: inherit;
       padding-left: 1rem;
+      -webkit-box-shadow: -1px 10px 15px -7px #959595;
+      box-shadow: -1px 10px 15px -7px #959595;
     }
     :focus {
       outline: none;
@@ -71,6 +73,8 @@ body {
     padding: 0.4rem 0.8rem 0.4rem 0.8rem;
     border: solid 0.2px rgb(209, 209, 250);
     font-size: 0.9rem;
+    -webkit-box-shadow: -1px 10px 15px -7px #959595;
+    box-shadow: -1px 10px 15px -7px #959595;
   }
   button:hover {
     background-color: rgb(219, 219, 250);
